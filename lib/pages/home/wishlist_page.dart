@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sekolah/theme.dart';
+import 'package:sekolah/widgets/wishlist_card.dart';
 
 class WishlistPage extends StatelessWidget {
   @override
@@ -77,10 +78,29 @@ class WishlistPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return Expanded(
+        child: Container(
+          color: backgroundColor3,
+          child: ListView(
+            padding: EdgeInsets.symmetric(
+              horizontal: defaultMargin,
+            ),
+            children: [
+              WishlistCard(),
+              WishlistCard(),
+              WishlistCard(),
+            ],
+          ),
+        ),
+      );
+    }
+
     return Column(
       children: [
         header(),
-        emptyWishlist(),
+        // emptyWishlist(),
+        content(),
       ],
     );
   }
